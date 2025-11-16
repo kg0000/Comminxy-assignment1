@@ -5,6 +5,9 @@ function App() {
   const [note, setNote] = useState("");
   const [entries, setEntries] = useState([]);
 
+  // 🔗 Your live backend on Render
+  const BASE_URL = "https://comminxy-assignment1.onrender.com/api/entries";
+
   const emotions = [
     { label: "Happy 😊", value: "Happy" },
     { label: "Calm 😌", value: "Calm" },
@@ -15,26 +18,34 @@ function App() {
   ];
 
   const fetchEntries = async () => {
-    const res = await fetch("http://localhost:3000/api/entries");
-    const data = await res.json();
-    setEntries(data);
+    try {
+      const res = await fetch(BASE_URL);
+      const data = await res.json();
+      setEntries(data);
+    } catch (err) {
+      console.error("bruh frontend couldn’t fetch entries 💀", err);
+    }
   };
 
   const addEntry = async () => {
     if (!emotion || !note.trim()) {
-      alert("Yo, pick an emotion AND write something ");
+      alert("Pick an emotion AND write something, bestie 😭");
       return;
     }
 
-    await fetch("http://localhost:3000/api/entries", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ emotion, note })
-    });
+    try {
+      await fetch(BASE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ emotion, note })
+      });
 
-    setEmotion("");
-    setNote("");
-    fetchEntries();
+      setEmotion("");
+      setNote("");
+      fetchEntries();
+    } catch (err) {
+      console.error("bro the entry didn’t save 😂", err);
+    }
   };
 
   useEffect(() => {
@@ -78,7 +89,7 @@ function App() {
 
       <div className="entries-list">
         {entries.length === 0 ? (
-          <p className="empty">No entries yet  write your first one!</p>
+          <p className="empty">No entries yet — spill your thoughts!</p>
         ) : (
           entries.map((entry) => (
             <div key={entry.id} className="entry-item">
