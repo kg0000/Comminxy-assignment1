@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: #f5f4ef;
+}
+
+.app-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 700;
+}
+
+.journal-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 35px;
+}
+
+.label {
+  font-weight: 600;
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px;
+  height: 110px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  resize: vertical;
+  margin-bottom: 20px;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: #444;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.entry-item {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+  border-left: 5px solid #555;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.entry-emotion {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.entry-note {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.entry-date {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.empty {
+  text-align: center;
+  color: #777;
+  margin-top: 10px;
+}
